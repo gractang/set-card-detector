@@ -14,7 +14,6 @@
 		2D24593428871C6600903C12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D24593328871C6600903C12 /* Assets.xcassets */; };
 		2D24593728871C6600903C12 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D24593528871C6600903C12 /* LaunchScreen.storyboard */; };
 		2D45E19F2891EE69000B4B9C /* best072722.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 2D45E19E2891EE69000B4B9C /* best072722.mlmodel */; };
-		2D83383C288F9A82000F877B /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D83383B288F9A82000F877B /* Card.swift */; };
 		2D8338532890B369000F877B /* yolov5swnms.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 2D8338522890B369000F877B /* yolov5swnms.mlmodel */; };
 		2DA425DF2891D57300E18013 /* SetCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA425DE2891D57300E18013 /* SetCard.swift */; };
 		2DA425E12891D71B00E18013 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA425E02891D71B00E18013 /* Constants.swift */; };
@@ -32,7 +31,6 @@
 		2D24593628871C6600903C12 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2D24593828871C6600903C12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2D45E19E2891EE69000B4B9C /* best072722.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = best072722.mlmodel; path = ../../../../Downloads/best072722.mlmodel; sourceTree = "<group>"; };
-		2D83383B288F9A82000F877B /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		2D8338522890B369000F877B /* yolov5swnms.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = yolov5swnms.mlmodel; sourceTree = "<group>"; };
 		2DA425DE2891D57300E18013 /* SetCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetCard.swift; sourceTree = "<group>"; };
 		2DA425E02891D71B00E18013 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -92,7 +90,6 @@
 			isa = PBXGroup;
 			children = (
 				2D24592E28871C6500903C12 /* ViewController.swift */,
-				2D83383D288F9A88000F877B /* Models */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -104,14 +101,6 @@
 				2D24593528871C6600903C12 /* LaunchScreen.storyboard */,
 			);
 			name = Views;
-			sourceTree = "<group>";
-		};
-		2D83383D288F9A88000F877B /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				2D83383B288F9A82000F877B /* Card.swift */,
-			);
-			name = Models;
 			sourceTree = "<group>";
 		};
 		2DA425D92891219200E18013 /* Models */ = {
@@ -245,7 +234,6 @@
 				2D45E19F2891EE69000B4B9C /* best072722.mlmodel in Sources */,
 				2D24592D28871C6500903C12 /* SceneDelegate.swift in Sources */,
 				2DA425DF2891D57300E18013 /* SetCard.swift in Sources */,
-				2D83383C288F9A82000F877B /* Card.swift in Sources */,
 				2DA425E12891D71B00E18013 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
