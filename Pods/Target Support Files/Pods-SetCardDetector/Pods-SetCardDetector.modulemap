@@ -1,0 +1,6 @@
+framework module Pods_SetCardDetector {
+  umbrella header "Pods-SetCardDetector-umbrella.h"
+
+  export *
+  module * { export * }
+}
