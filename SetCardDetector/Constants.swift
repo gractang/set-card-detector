@@ -14,6 +14,9 @@ struct K {
         static let FILL_DICT = ["0": "full", "1": "empty", "2": "striped"]
         static let SHAPE_DICT = ["0": "oval", "1": "diamond", "2": "squiggle"]
     }
+    
+    static let cellNibName = "SetCell"
+    static let cellIdentifier = "setCell"
 }
 
 // Probably doesn't belong here, but I wasn't really sure where it should go
