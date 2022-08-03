@@ -17,10 +17,20 @@ class SetCell: UICollectionViewCell {
     var cardTwo: SetCard? = nil
     var cardThree: SetCard? = nil
     
+    var cards: [SetCard]? = nil
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         
     }
+    
+    override var isSelected: Bool {
+        didSet {
+            self.contentView.backgroundColor = isSelected ? UIColor.systemBlue : UIColor.systemPurple
+            
+        }
+    }
+        
 
 }

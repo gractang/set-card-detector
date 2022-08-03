@@ -19,6 +19,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
     let imagePicker = UIImagePickerController()
     var solver = SetSolver()
     var currSets: [[SetCard]] = []
+    var originalImage: UIImage? = nil
       
     lazy var detectionRequest: VNCoreMLRequest = {
             do {
@@ -164,6 +165,36 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
         self.photoImageView?.image = newImage
     }
     
+    // Draws a given SET onto the image
+    func drawSetOnPreview(for set: [SetCard]) {
+        
+        // check to make sure the original image exists
+        // (i think it always will, but just to be safe)
+        guard let image = self.originalImage else {
+            return
+        }
+        
+        let imageSize = image.size
+        let scale: CGFloat = 0
+        UIGraphicsBeginImageContextWithOptions(imageSize, false, scale)
+        image.draw(at: CGPoint.zero)
+        
+        for card in set {
+            let boundingBox = card.boundingBox
+            let rectangle = CGRect(x: boundingBox.minX*image.size.width, y: (1-boundingBox.minY-boundingBox.height)*image.size.height, width: boundingBox.width*image.size.width, height: boundingBox.height*image.size.height)
+            
+            let context = UIGraphicsGetCurrentContext()!
+            context.setStrokeColor(UIColor.systemBlue.cgColor)
+            context.setLineWidth(30)
+            context.addRect(rectangle)
+            context.drawPath(using: .stroke)
+        }
+        
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        self.photoImageView?.image = newImage
+    }
+    
 }
 
 //MARK: - UIImagePickerControllerDelegate
@@ -175,6 +206,7 @@ extension ViewController: UIImagePickerControllerDelegate {
             return
         }
         self.photoImageView?.image = image
+        self.originalImage = image
         updateDetections(for: image)
     }
 }
@@ -200,9 +232,12 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
         cell.cardOne = currSets[currentSetIndex][0]
         cell.cardTwo = currSets[currentSetIndex][1]
         cell.cardThree = currSets[currentSetIndex][2]
+        
         cell.cardOneDesc.text = cell.cardOne?.description
         cell.cardTwoDesc.text = cell.cardTwo?.description
         cell.cardThreeDesc.text = cell.cardThree?.description
+        
+        cell.cards = [cell.cardOne!, cell.cardTwo!, cell.cardThree!]
         return cell
     }
     
@@ -216,9 +251,9 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
         return CGSize(width: 200, height: height * 0.8)
     }
     
-    
+    // Triggers upon selection of item
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let cell = collectionView.cellForItem(at: indexPath)
+        let cell = collectionView.cellForItem(at: indexPath) as? SetCell
         //Briefly fade the cell on selection
         UIView.animate(withDuration: 0.25,
                        animations: {
@@ -232,5 +267,6 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
             })
         }
         print("Selected cell: \(indexPath.row)")
+        drawSetOnPreview(for: (cell?.cards)!)
     }
 }
