@@ -106,8 +106,8 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
             let board = self.solver.getCardsFromDetections(detections: detections)
             //print(self.solver.solve(board))
             let sets = self.solver.solve(board)
-            print(sets)
-            print("------------\n************\n------------")
+//            print(sets)
+//            print("------------\n************\n------------")
             if sets.count == 0 {
                 self.navigationItem.title = "No Sets!"
             } else {
@@ -266,7 +266,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
                             cell?.alpha = 1
             })
         }
-        print("Selected cell: \(indexPath.row)")
+//        print("Selected cell: \(indexPath.row)")
         drawSetOnPreview(for: (cell?.cards)!)
     }
 }

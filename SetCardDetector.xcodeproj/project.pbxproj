@@ -395,9 +395,12 @@
 				DEVELOPMENT_TEAM = 45XXP9WCAT;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SetCardDetector/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Allow camera use to take photos.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Allow photo library access to choose photos.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -425,9 +428,12 @@
 				DEVELOPMENT_TEAM = 45XXP9WCAT;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SetCardDetector/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Allow camera use to take photos.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Allow photo library access to choose photos.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
