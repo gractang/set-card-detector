@@ -36,14 +36,15 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
         }()
     
     @IBAction func cameraTapped(_ sender: UIBarButtonItem) {
-        present(imagePicker, animated: true, completion: nil)
+        
+        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         imagePicker.delegate = self
         imagePicker.allowsEditing = false
-        imagePicker.sourceType = .photoLibrary
+//        imagePicker.sourceType = .photoLibrary
         
         setCollectionView.delegate = self
         setCollectionView.dataSource = self
@@ -195,6 +196,15 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
         self.photoImageView?.image = newImage
     }
     
+    // Set the shouldAutorotate to False
+    override open var shouldAutorotate: Bool {
+       return false
+    }
+
+    // Specify the orientation.
+    override open var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+       return .portrait
+    }
 }
 
 //MARK: - UIImagePickerControllerDelegate
@@ -208,6 +218,48 @@ extension ViewController: UIImagePickerControllerDelegate {
         self.photoImageView?.image = image
         self.originalImage = image
         updateDetections(for: image)
+    }
+    
+    // brings up an alert menu and allows the user to pick between camera and gallery
+    func cameraOrGallery() {
+        let alert = UIAlertController(title: "Choose Image", message: nil, preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: "Camera", style: .default, handler: { _ in
+            self.openCamera()
+        }))
+
+        alert.addAction(UIAlertAction(title: "Gallery", style: .default, handler: { _ in
+            self.openGallery()
+        }))
+
+        alert.addAction(UIAlertAction.init(title: "Cancel", style: .cancel, handler: nil))
+
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func openCamera() {
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.camera) {
+                imagePicker.sourceType = UIImagePickerController.SourceType.camera
+                self.present(imagePicker, animated: true, completion: nil)
+            }
+            else
+            {
+                let alert  = UIAlertController(title: "Notice", message: "We don't have access to your camera.", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+            }
+    }
+    
+    func openGallery() {
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.photoLibrary){
+                imagePicker.sourceType = UIImagePickerController.SourceType.photoLibrary
+                self.present(imagePicker, animated: true, completion: nil)
+            }
+            else
+            {
+                let alert  = UIAlertController(title: "Notice", message: "We don't have access to your gallery.", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+            }
     }
 }
 
