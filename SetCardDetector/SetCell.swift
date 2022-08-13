@@ -8,10 +8,10 @@
 import UIKit
 
 class SetCell: UICollectionViewCell {
-
-    @IBOutlet weak var cardOneDesc: UILabel!
-    @IBOutlet weak var cardTwoDesc: UILabel!
-    @IBOutlet weak var cardThreeDesc: UILabel!
+    
+    @IBOutlet weak var cardOneImg: UIImageView!
+    @IBOutlet weak var cardTwoImg: UIImageView!
+    @IBOutlet weak var cardThreeImg: UIImageView!
     
     var cardOne: SetCard? = nil
     var cardTwo: SetCard? = nil
@@ -22,7 +22,6 @@ class SetCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        
     }
     
     override var isSelected: Bool {

@@ -25,7 +25,6 @@
                                     </imageView>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="CQb-AS-Zwa">
                                         <rect key="frame" x="0.0" y="645" width="414" height="129"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="th4-oW-HRa">
                                             <size key="itemSize" width="100" height="100"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -33,7 +32,7 @@
                                             <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
                                         </collectionViewFlowLayout>
                                         <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="setCell" id="Okd-8x-trX">
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="setCell" id="Okd-8x-trX" customClass="SetCell" customModule="SetCardDetector" customModuleProvider="target">
                                                 <rect key="frame" x="10" y="14.5" width="100" height="100"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -60,11 +59,23 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="OJC-qO-KsZ">
-                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="2O3-Tf-Yw8">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="info.circle" catalog="system" id="VlJ-VN-v9k">
                             <connections>
-                                <action selector="cameraTapped:" destination="BYZ-38-t0r" id="J2X-JQ-cx5"/>
+                                <action selector="infoButtonTapped:" destination="BYZ-38-t0r" id="gMM-Sb-haQ"/>
                             </connections>
                         </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="camera" id="2O3-Tf-Yw8">
+                                <connections>
+                                    <action selector="cameraTapped:" destination="BYZ-38-t0r" id="J2X-JQ-cx5"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Item" image="photo.on.rectangle" catalog="system" id="fex-RJ-a1X">
+                                <connections>
+                                    <action selector="photoLibraryTapped:" destination="BYZ-38-t0r" id="E6c-nH-wr8"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="photoImageView" destination="WLY-Rt-bf1" id="A42-6x-bTb"/>
@@ -95,6 +106,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="info.circle" catalog="system" width="128" height="121"/>
+        <image name="photo.on.rectangle" catalog="system" width="128" height="97"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

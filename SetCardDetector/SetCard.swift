@@ -23,7 +23,8 @@ struct SetCard: CustomStringConvertible {
         self.fill = f
         self.shape = s
         self.boundingBox = b
-        self.description = K.Card.NUM_DICT[String(n)]! + " " + K.Card.COLOR_DICT[String(c)]! + " " + K.Card.FILL_DICT[String(f)]! + " " + K.Card.SHAPE_DICT[String(s)]!
+        self.description = String(n)+String(c)+String(f)+String(s)
+//        self.description = K.Card.NUM_DICT[String(n)]! + " " + K.Card.COLOR_DICT[String(c)]! + " " + K.Card.FILL_DICT[String(f)]! + " " + K.Card.SHAPE_DICT[String(s)]!
     }
     
 }

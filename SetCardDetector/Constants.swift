@@ -17,6 +17,10 @@ struct K {
     
     static let cellNibName = "SetCell"
     static let cellIdentifier = "setCell"
+    
+    struct Info {
+        static let tutorial = "Take a picture of your SET cards with your camera or upload an image. Make sure your cards are arranged vertically (short sides on the top and bottom) with no overlap. See example below: "
+    }
 }
 
 // Probably doesn't belong here, but I wasn't really sure where it should go

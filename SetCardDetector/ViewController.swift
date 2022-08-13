@@ -36,8 +36,28 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
         }()
     
     @IBAction func cameraTapped(_ sender: UIBarButtonItem) {
+        openCamera()
+    }
+    
+    @IBAction func photoLibraryTapped(_ sender: UIBarButtonItem) {
+        openGallery()
+    }
+    
+    @IBAction func infoButtonTapped(_ sender: UIBarButtonItem) {
+        let alert = UIAlertController(title: "Choose Image", message: K.Info.tutorial, preferredStyle: .alert)
+      
+//        let image = UIImage(named: "Set_Example")
+//
+//        alert.view.addSubview(imageView)
+        // Create OK button with action handler
+        let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
+            print("cool")
+        })
+        
+        alert.addAction(ok)
         
         
+        present(alert, animated: true, completion: nil)
     }
     
     override func viewDidLoad() {
@@ -209,6 +229,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
 
 //MARK: - UIImagePickerControllerDelegate
 extension ViewController: UIImagePickerControllerDelegate {
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         picker.dismiss(animated: true)
 
@@ -285,10 +306,13 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
         cell.cardTwo = currSets[currentSetIndex][1]
         cell.cardThree = currSets[currentSetIndex][2]
         
-        cell.cardOneDesc.text = cell.cardOne?.description
-        cell.cardTwoDesc.text = cell.cardTwo?.description
-        cell.cardThreeDesc.text = cell.cardThree?.description
+//        cell.cardOneDesc.text = cell.cardOne?.description
+//        cell.cardTwoDesc.text = cell.cardTwo?.description
+//        cell.cardThreeDesc.text = cell.cardThree?.description
         
+        cell.cardOneImg.image = UIImage(named: currSets[currentSetIndex][0].description)
+        cell.cardTwoImg.image = UIImage(named: currSets[currentSetIndex][1].description)
+        cell.cardThreeImg.image = UIImage(named: currSets[currentSetIndex][2].description)
         cell.cards = [cell.cardOne!, cell.cardTwo!, cell.cardThree!]
         return cell
     }

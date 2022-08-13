@@ -6,6 +6,5 @@ target 'SetCardDetector' do
   use_frameworks!
 
   # Pods for SetCardDetector
-pod 'TensorFlowLiteSwift'
 
 end
