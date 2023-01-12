@@ -15,11 +15,11 @@
 		2D24593728871C6600903C12 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D24593528871C6600903C12 /* LaunchScreen.storyboard */; };
 		2D2CB8C82899EE420079B879 /* SetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2CB8C62899EE420079B879 /* SetCell.swift */; };
 		2D2CB8C92899EE420079B879 /* SetCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D2CB8C72899EE420079B879 /* SetCell.xib */; };
-		2D45E19F2891EE69000B4B9C /* best072722.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 2D45E19E2891EE69000B4B9C /* best072722.mlmodel */; };
 		2D8338532890B369000F877B /* yolov5swnms.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 2D8338522890B369000F877B /* yolov5swnms.mlmodel */; };
 		2DA425DF2891D57300E18013 /* SetCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA425DE2891D57300E18013 /* SetCard.swift */; };
 		2DA425E12891D71B00E18013 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA425E02891D71B00E18013 /* Constants.swift */; };
 		2DA425E32891D8B300E18013 /* SetSolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA425E22891D8B300E18013 /* SetSolver.swift */; };
+		2DD293F428C5221100F44694 /* best072722.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 2DD293F328C5221100F44694 /* best072722.mlmodel */; };
 		82B59BB043A445A18C1143C4 /* Pods_SetCardDetector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BA14ECFF0E1D0840C8CCAC2 /* Pods_SetCardDetector.framework */; };
 /* End PBXBuildFile section */
 
@@ -34,11 +34,11 @@
 		2D24593828871C6600903C12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2D2CB8C62899EE420079B879 /* SetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetCell.swift; sourceTree = "<group>"; };
 		2D2CB8C72899EE420079B879 /* SetCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SetCell.xib; sourceTree = "<group>"; };
-		2D45E19E2891EE69000B4B9C /* best072722.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = best072722.mlmodel; path = ../../../../Downloads/best072722.mlmodel; sourceTree = "<group>"; };
 		2D8338522890B369000F877B /* yolov5swnms.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = yolov5swnms.mlmodel; sourceTree = "<group>"; };
 		2DA425DE2891D57300E18013 /* SetCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetCard.swift; sourceTree = "<group>"; };
 		2DA425E02891D71B00E18013 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		2DA425E22891D8B300E18013 /* SetSolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetSolver.swift; sourceTree = "<group>"; };
+		2DD293F328C5221100F44694 /* best072722.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = best072722.mlmodel; sourceTree = "<group>"; };
 		7BA14ECFF0E1D0840C8CCAC2 /* Pods_SetCardDetector.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SetCardDetector.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4D53704431C589270192B4E /* Pods-SetCardDetector.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SetCardDetector.release.xcconfig"; path = "Target Support Files/Pods-SetCardDetector/Pods-SetCardDetector.release.xcconfig"; sourceTree = "<group>"; };
 		EC079E24A68903F991C2B96A /* Pods-SetCardDetector.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SetCardDetector.debug.xcconfig"; path = "Target Support Files/Pods-SetCardDetector/Pods-SetCardDetector.debug.xcconfig"; sourceTree = "<group>"; };
@@ -85,7 +85,7 @@
 				2D24593328871C6600903C12 /* Assets.xcassets */,
 				2D24593828871C6600903C12 /* Info.plist */,
 				2D8338522890B369000F877B /* yolov5swnms.mlmodel */,
-				2D45E19E2891EE69000B4B9C /* best072722.mlmodel */,
+				2DD293F328C5221100F44694 /* best072722.mlmodel */,
 			);
 			path = SetCardDetector;
 			sourceTree = "<group>";
@@ -234,11 +234,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2DD293F428C5221100F44694 /* best072722.mlmodel in Sources */,
 				2D8338532890B369000F877B /* yolov5swnms.mlmodel in Sources */,
 				2D24592F28871C6500903C12 /* ViewController.swift in Sources */,
 				2DA425E32891D8B300E18013 /* SetSolver.swift in Sources */,
 				2D24592B28871C6500903C12 /* AppDelegate.swift in Sources */,
-				2D45E19F2891EE69000B4B9C /* best072722.mlmodel in Sources */,
 				2D24592D28871C6500903C12 /* SceneDelegate.swift in Sources */,
 				2DA425DF2891D57300E18013 /* SetCard.swift in Sources */,
 				2DA425E12891D71B00E18013 /* Constants.swift in Sources */,

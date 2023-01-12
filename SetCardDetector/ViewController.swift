@@ -138,7 +138,8 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
             self.setCollectionView.reloadData()
         }
     }
-       
+    
+    // TODO: Remove number next to detection
     func drawDetectionsOnPreview(detections: [VNRecognizedObjectObservation]) {
         guard let image = self.photoImageView?.image else {
             return
