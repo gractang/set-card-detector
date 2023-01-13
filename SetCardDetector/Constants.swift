@@ -19,7 +19,8 @@ struct K {
     static let cellIdentifier = "setCell"
     
     struct Info {
-        static let tutorial = "Take a picture of your SET cards with your camera or upload an image. Make sure your cards are arranged vertically (short sides on the top and bottom) with no overlap. See example below: "
+        
+        static let tutorial = "\nTake a picture of the SET cards with your camera, or upload an image. Make sure the cards are arranged with no overlap, and with the short sides on the top and bottom.\n\nIdentified cards will show in green. If there are SETs, they will appear at the bottom of the screen. Tapping each SET will show the applicable cards in blue."
     }
 }
 
