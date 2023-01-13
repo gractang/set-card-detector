@@ -44,11 +44,21 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
     }
     
     @IBAction func infoButtonTapped(_ sender: UIBarButtonItem) {
-        let alert = UIAlertController(title: "Choose Image", message: K.Info.tutorial, preferredStyle: .alert)
-      
-//        let image = UIImage(named: "Set_Example")
-//
-//        alert.view.addSubview(imageView)
+//        let alert = UIAlertController(title: "Choose Image", message: K.Info.tutorial, preferredStyle: .alert)
+        let alert = UIAlertController(title: "Choose Image", message: "", preferredStyle: .alert)
+        
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.alignment = NSTextAlignment.justified
+        let messageText = NSAttributedString(
+            string: K.Info.tutorial,
+            attributes: [
+                NSAttributedString.Key.paragraphStyle: paragraphStyle
+            ]
+        )
+
+        alert.setValue(messageText, forKey: "attributedMessage")
+        
+
         // Create OK button with action handler
         let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
             print("cool")
@@ -139,7 +149,6 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
         }
     }
     
-    // TODO: Remove number next to detection
     func drawDetectionsOnPreview(detections: [VNRecognizedObjectObservation]) {
         guard let image = self.photoImageView?.image else {
             return
@@ -154,9 +163,6 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
         print(detections.count)
         
         for detection in detections {
-            let info = detection.labels.first!.identifier + String(format: " %.02f", detection.labels.first!.confidence)
-            print(info)
-            print("------------")
             
 //            The coordinates are normalized to the dimensions of the processed image, with the origin at the image's lower-left corner.
             let boundingBox = detection.boundingBox
@@ -165,20 +171,24 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
             // Theoretically able to force unwrap, since image context begins before this loop
             let context = UIGraphicsGetCurrentContext()!
             context.setStrokeColor(UIColor.green.cgColor)
-            context.setLineWidth(10)
+            context.setLineWidth(30)
             context.addRect(rectangle)
             context.drawPath(using: .stroke)
-            
-            let textColor = UIColor.green
-            let textFont = UIFont(name: "Helvetica Bold", size: image.size.width / 25)!
 
-            let textFontAttributes = [
-                NSAttributedString.Key.font: textFont,
-                NSAttributedString.Key.foregroundColor: textColor,
-                ] as [NSAttributedString.Key : Any]
+            // not sure what this does...
 //            image.draw(in: CGRect(origin: CGPoint.zero, size: image.size))
-//
-            info.draw(in: rectangle, withAttributes: textFontAttributes)
+            
+            // below is optional -- draws the name of the card + the model's confidence inside the rectangle
+//            let textColor = UIColor.green
+//            let textFont = UIFont(name: "Helvetica Bold", size: image.size.width / 25)!
+//            let textFontAttributes = [
+//                NSAttributedString.Key.font: textFont,
+//                NSAttributedString.Key.foregroundColor: textColor,
+//                ] as [NSAttributedString.Key : Any]
+//            let info = detection.labels.first!.identifier + String(format: " %.02f", detection.labels.first!.confidence)
+//            print(info)
+//            print("------------")
+//            info.draw(in: rectangle, withAttributes: textFontAttributes)
             
         }
         
